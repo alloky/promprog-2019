@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: 'rabbitmq:3.6-management'
+    command: rabbitmq-server
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  consumer:
+    build: consumer
+    restart: on-failure
+    links: 
+      - rabbitmq
+
+  producer:
+    build: producer
+    restart: on-failure
+    links:
+      - rabbitmq
