@@ -15,7 +15,7 @@ def main_loop():
 		channel.basic_publish(exchange='', 
 			routing_key='hello',
 			body=data.encode())
-		time.sleep(2)
+		time.sleep(float(random.randint(500, 3000))/1000)
 
 while True:
 	try:
