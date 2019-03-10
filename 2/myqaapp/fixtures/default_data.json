@@ -1,0 +1,18 @@
+[
+  {
+    "model": "myqaapp.Question",
+    "pk": 1,
+    "fields": {
+      "shortName": "About me",
+      "text": "Who am I?"
+    }
+  },
+  {
+    "model": "myqaapp.Question",
+    "pk": 2,
+    "fields": {
+      "shortName": "About you",
+      "text": "Who are you?"
+    }
+  }
+]

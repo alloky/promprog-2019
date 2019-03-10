@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<title>List of Questions</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}" />
+</head>
+<body>
+	<blockquote class="blockquote text-center">
+	  <h2 class="mb-0">Спроси.ру</h2>
+	  <footer class="blockquote-footer"> Быть или не быть? <cite title="Source Title">Шекспир</cite></footer>
+	</blockquote>
+	<div class="row">	
+		<div class="col-3 text-center">
+			<a href="/" class="btn btn-info" role="button">All questions</a>
+		</div>
+		<div class="col-6">
+			<form action="add_question" method="POST" role="form" class="form-horizontal">
+			{% csrf_token %}
+				<div class="form-group">
+					<label for="shortNameInput">Заголовок</label>
+					<input type="text" class="form-control" id="shortNameInput" placeholder="Заголовок"
+					name="shortName"
+					>
+					<small id="emailHelp" class="form-text text-muted">Не длиннее 50 символов</small>
+				</div>
+				<div class="form-group">
+					<label for="textInput">Текст ( не длинее 3000 символов )</label>
+					<textarea class="form-control" id="textInput" rows="3" name="text"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Создать</button>
+			</form>
+		</div>
+		<div class="col-3"></div>
+	</div>
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+</body>
+</html>
